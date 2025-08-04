@@ -12,12 +12,12 @@ const middleware = (req, res, next) => {
 }
 
 app.use(middleware);
-app.get('/', (req, res) => {
-  res.send(`<div> <h1>Welcome to the Home Page!<h1><a href="/homepage">Login</a></div>`);
-  // res.render('homepage', { title: 'Home Page' });
-})
 
-app.get('/homepage', (req, res) => {
+// app.get('/', (req, res) => {
+//   res.send(`<div> <h1>Welcome to the Home Page!<h1><a href="/homepage">Login</a></div>`);
+// })
+
+app.get('/', (req, res) => {
   res.render('homepage', { title: 'Home Page' });
 });
 app.post('/submit', (req, res) => {
