@@ -13,8 +13,13 @@ const middleware = (req, res, next) => {
 
 app.use(middleware);
 app.get('/', (req, res) => {
-  res.render('homepage', { title: 'Home Page' });
+  res.send(`<div> <h1>Welcome to the Home Page!<h1><a href="/homepage">Login</a></div>`);
+  // res.render('homepage', { title: 'Home Page' });
 })
+
+app.get('/homepage', (req, res) => {
+  res.render('homepage', { title: 'Home Page' });
+});
 app.post('/submit', (req, res) => {
   const { name, email, password } = req.body;
   console.log(`Name: ${name}, Email: ${email}, Password: ${password}`);
